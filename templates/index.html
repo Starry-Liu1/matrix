@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情感支持问答系统</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <!-- 登录页面 -->
+    <div id="login-page" class="login-container">
+        <h1>欢迎来到情感支持问答系统</h1>
+        <form id="login-form">
+            <label for="username">请输入您的用户名：</label>
+            <input type="text" id="username" placeholder="用户名" required>
+
+            <label for="gender">请选择您的性别：</label>
+            <select id="gender" required>
+                <option value="">请选择</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
+                <option value="其他">其他</option>
+            </select>
+
+            <label for="age">请输入您的年龄：</label>
+            <input type="number" id="age" placeholder="年龄" min="1" max="120" required>
+
+            <button type="submit">登录</button>
+        </form>
+    </div>
+
+    <!-- 主页面 -->
+    <div id="main-page" class="container" style="display: none;">
+        <!-- 左侧主内容区域 -->
+        <div class="main-content">
+            <header class="header">
+                <h1>情感支持问答系统</h1>
+                <p id="user-display">
+                    当前用户：<span id="current-user"></span>，性别：<span id="current-gender"></span>，年龄：<span id="current-age"></span>
+                </p>
+            </header>
+
+            <!-- 新增功能模块：用户信息栏 -->
+            <div class="user-info">
+                <div class="avatar" id="user-avatar">U</div>
+                <p>欢迎，<span id="current-user-info"></span></p>
+            </div>
+
+            <!-- 聊天窗口 -->
+            <div id="chatbox" class="chatbox">
+                <div id="messages" class="messages">
+                    <!-- 动态生成的聊天内容 -->
+                </div>
+            </div>
+
+            <!-- 用户输入区域 -->
+            <div id="user-input" class="input-container">
+                <textarea id="message" placeholder="请输入您的问题..." rows="3"></textarea>
+                <button id="send-button" onclick="sendMessage()">发送</button>
+            </div>
+        </div>
+
+        <!-- 新增功能模块：右侧功能栏 -->
+        <div class="sidebar">
+            <h2>功能栏</h2>
+            <button onclick="showHelp()">帮助</button>
+            <button onclick="showSettings()">设置</button>
+            <button onclick="showHistory()">历史记录</button>
+            <button id="new-conversation-button">开始新对话</button> <!-- 新增按钮 -->
+            <button id="history-button">保存历史对话</button> <!-- 新增按钮 -->
+            <button onclick="logout()">退出登录</button>
+        </div>
+    </div>
+
+    <script src="../static/app.js"></script>
+</body>
+</html>

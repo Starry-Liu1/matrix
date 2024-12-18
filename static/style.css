@@ -1,0 +1,300 @@
+/* 通用样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px; /* 增加容器的最大宽度以适应右侧功能栏 */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+}
+
+/* 左侧主内容区域 */
+.main-content {
+    flex: 3; /* 左侧内容区域占3份 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 头部样式 */
+.header {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #3e8e41;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+/* 聊天窗口 */
+#chatbox {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* 自动添加垂直滚动条 */
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 优化滚动条样式 */
+#chatbox::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chatbox::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#chatbox::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#chatbox::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+/* 用户消息样式 */
+.user-message {
+    align-self: flex-end;
+    background-color: #d1e7ff; /* 用户消息为浅蓝色 */
+    color: #333;
+    border: 1px solid #a8c8e9;
+}
+
+/* 系统消息样式 */
+.bot-message {
+    align-self: flex-start;
+    background-color: #e8f5e9; /* 系统消息为浅绿色 */
+    color: #333;
+    border: 1px solid #a3d3a2;
+}
+
+/* 输入区域 */
+.input-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 2px solid #ddd;
+}
+
+textarea {
+    flex-grow: 1;
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* 登录页面样式 */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: 'Arial', sans-serif;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4caf50;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#login-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#username,
+#gender,
+#age {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#username:focus,
+#gender:focus,
+#age:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+#login-form button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-form button:hover {
+    background-color: #45a049;
+}
+
+/* 主页面顶部信息样式 */
+#user-display {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+#current-user,
+#current-gender,
+#current-age {
+    font-weight: bold;
+    color: #333;
+}
+
+/* 新增功能模块：用户头像 */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* 新增功能模块：用户信息栏 */
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f2f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* 新增功能模块：消息时间戳 */
+.message-time {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* 新增功能模块：右侧功能栏 */
+.sidebar {
+    flex: 1; /* 右侧功能栏占1份 */
+    background-color: #e8f5e9; /* 与系统消息背景颜色一致 */
+    border-left: 2px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    color: #4caf50; /* 与头部背景颜色一致 */
+    margin-bottom: 10px;
+}
+
+.sidebar button {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    background-color: #ffffff; /* 按钮背景为白色 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #555; /* 与头部背景颜色一致 */
+}
+
+.sidebar button:hover {
+    background-color: #d1e7ff; /* 与用户消息背景颜色一致 */
+}
